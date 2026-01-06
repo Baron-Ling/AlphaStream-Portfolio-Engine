@@ -46,7 +46,7 @@ def neg_sharpe_ratio(weights, log_returns, cov_matrix, risk_free_rate):
     return -sharpe_ratio(weights, log_returns, cov_matrix, risk_free_rate)
 
 constraints = {'type': 'eq', 'fun': lambda weights: np.sum(weights) - 1}
-bounds = [(0, 0.3) for _ in range(len(valid_tickers))]
+bounds = [(0, 0.15) for _ in range(len(valid_tickers))]
 initial_weights = np.array([1/len(valid_tickers)] * len(valid_tickers))
 
 optimized_results = minimize(neg_sharpe_ratio, initial_weights, 
@@ -177,5 +177,6 @@ with PdfPages(pdf_filename) as pdf:
     plt.title("Monte Carlo: 10,000 Simulated Future Paths", fontsize=14)
     pdf.savefig()
     plt.close()
+
 
 print(f"Successfully exported report to: {pdf_filename}")
