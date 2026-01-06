@@ -19,8 +19,10 @@ The engine requires a Python 3.8+ environment. To ensure the mathematical solver
 - seaborn: A statistical data visualisation layer built on top of Matplotlib. It is used to generate the Correlation Heatmap, leveraging its ability to dynamically scale and colour-code complex relationship matrices between 100+ assets.
 
 ## Additional Steps to Setup
-- API Integration: Obtain a free API key from FRED and update SECTION 3 of the code.
 - Define Universe: Modify the tickers list in SECTION 1.
+  > tickers = [""]
+- API Integration: Obtain a free API key from FRED and update SECTION 3 of the code.
+  > fred = Fred(api_key='')
 - Run: Execute the script to perform the optimisation and generate the Portfolio_Analysis_Report.pdf.
 
 # Methodology \& Key Features
