@@ -104,7 +104,7 @@ mc_5th = np.percentile(sim_paths[-1], 5)
 mc_95th = np.percentile(sim_paths[-1], 95)
 
 # --- SECTION 6: PDF EXPORT ---
-pdf_filename = "Pictet_Style_Portfolio_Report.pdf"
+pdf_filename = "AlphaStream_Report.pdf"
 with PdfPages(pdf_filename) as pdf:
     # Page 1: Executive Summary
     fig, ax = plt.subplots(figsize=(8.5, 11)); ax.axis('off')
@@ -246,3 +246,4 @@ print(f"  • Portfolio Sortino Ratio: {sortino_port:.3f} vs SPY: {sortino_spy:.
 print(f"  • Statistical Significance: {significance_text} (p={p_value:.4f})")
 print(f"  • Monte Carlo Expected 1-Year Value: ${mc_mean:.2f}")
 print(f"  • Alpha Generated: {alpha_gen:.2f}%")
+
